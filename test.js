@@ -136,6 +136,8 @@ describe("ChartJSImage", () => {
               datasets: [{ label: "Foo", data: [1, 2] }],
             },
           })
+          .width(1)
+          .height(1)
           .toBuffer()
       ).resolves.toMatchSnapshot());
 
@@ -193,7 +195,7 @@ describe("ChartJSImage", () => {
           .height(2)
           .toDataURI()
       ).resolves.toMatchInlineSnapshot(
-        `"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAAFklEQVQIW2N0rXn4nwEJMCFzQGzCAgCsPAKpdPyeOgAAAABJRU5ErkJggg=="`
+        `"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAEAQMAAACTPww9AAAABlBMVEVFfOH///+orS+RAAAACklEQVR4AWOAAgAACAABMIqD0gAAAABJRU5ErkJggg=="`
       ));
 
     it("support gifs", () =>
