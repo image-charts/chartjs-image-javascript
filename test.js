@@ -94,7 +94,7 @@ describe("ChartJSImage", () => {
   describe("toBuffer", () => {
     it("rejects if a chs is not defined", () =>
       expect(ChartJSImage().toBuffer()).rejects.toMatchInlineSnapshot(
-        `[Error: Bad Request]`
+        `[Error: "value" must contain at least one of [c, chart]]`
       ));
 
     it("rejects if a icac is defined without ichm", () =>
@@ -109,7 +109,9 @@ describe("ChartJSImage", () => {
           })
           .icac("test_fixture")
           .toBuffer()
-      ).rejects.toMatchInlineSnapshot(`[Error: Bad Request]`));
+      ).rejects.toMatchInlineSnapshot(
+        `[Error: The \`icac\` (ACCOUNT_ID) and \`ichm\` (HMAC-SHA256 request signature) query parameters must both be defined if specified. [Learn more](https://bit.ly/HMACENT)]`
+      ));
 
     it("rejects if timeout is reached", () =>
       expect(
@@ -195,7 +197,7 @@ describe("ChartJSImage", () => {
   describe("toDataURI", () => {
     it("rejects if there was an error", () =>
       expect(ChartJSImage().toDataURI()).rejects.toMatchInlineSnapshot(
-        `[Error: Bad Request]`
+        `[Error: "value" must contain at least one of [c, chart]]`
       ));
 
     it("works", () =>
@@ -239,7 +241,9 @@ describe("ChartJSImage", () => {
     it("rejects if there was an error", () =>
       expect(
         ChartJSImage().toFile("/tmp/chart.png")
-      ).rejects.toMatchInlineSnapshot(`[Error: Bad Request]`));
+      ).rejects.toMatchInlineSnapshot(
+        `[Error: "value" must contain at least one of [c, chart]]`
+      ));
 
     it("rejects when the path is invalid", () => {
       const file_path = "/__invalid_path/chart.png";
