@@ -2,7 +2,11 @@ import ChartJSImage from "./";
 import pkg from "./package.json";
 import fs from "fs";
 
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+
 describe("ChartJSImage", () => {
+  // Add 500ms delay between tests to avoid 429 rate limiting
+  beforeEach(() => delay(500));
   it("works in ES6", () => {
     expect(typeof ChartJSImage).toMatchInlineSnapshot(`"function"`);
   });
