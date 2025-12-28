@@ -4,6 +4,17 @@ import fs from "fs";
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
+// CI user-agent to bypass rate limiting (set in CI environment)
+const CI_USER_AGENT = process.env.IMAGE_CHARTS_USER_AGENT;
+
+// Helper to create ChartJSImage with CI user-agent if set
+const createChartJSImage = (opts = {}) => {
+  if (CI_USER_AGENT) {
+    opts.userAgent = CI_USER_AGENT;
+  }
+  return ChartJSImage(opts);
+};
+
 describe("ChartJSImage", () => {
   // Add 3000ms delay between tests to avoid 429 rate limiting
   beforeEach(() => delay(3000));
@@ -134,7 +145,7 @@ describe("ChartJSImage", () => {
 
     it("works", () =>
       expect(
-        ChartJSImage()
+        createChartJSImage()
           .chart({
             type: "bar",
             data: {
@@ -206,7 +217,7 @@ describe("ChartJSImage", () => {
 
     it("works", () =>
       expect(
-        ChartJSImage()
+        createChartJSImage()
           .chart({
             type: "bar",
             data: {
@@ -223,7 +234,7 @@ describe("ChartJSImage", () => {
       ));
 
     it("support gifs", () =>
-      ChartJSImage()
+      createChartJSImage()
         .chart({
           type: "bar",
           data: {
@@ -252,7 +263,7 @@ describe("ChartJSImage", () => {
     it("rejects when the path is invalid", () => {
       const file_path = "/__invalid_path/chart.png";
       return expect(
-        ChartJSImage()
+        createChartJSImage()
           .chart({
             type: "bar",
             data: {
@@ -266,7 +277,7 @@ describe("ChartJSImage", () => {
 
     it("works", () => {
       const file_path = "/tmp/chart.png";
-      return ChartJSImage()
+      return createChartJSImage()
         .chart({
           type: "bar",
           data: {

@@ -9,9 +9,9 @@ const { stringify } = require('javascript-stringify');
  * ChartJSImage URL builder
  * @typedef ChartJSImage
  */
-function ChartJSImage({secret, protocol, host, port, timeout} = {}, previous = {}) {
+function ChartJSImage({secret, protocol, host, port, timeout, userAgent} = {}, previous = {}) {
   if (!(this instanceof ChartJSImage)) {
-    return new ChartJSImage({secret, protocol, host, port, timeout}, previous);
+    return new ChartJSImage({secret, protocol, host, port, timeout, userAgent}, previous);
   }
   this._protocol = protocol || 'https';
   this._host = host || 'image-charts.com';
@@ -20,6 +20,7 @@ function ChartJSImage({secret, protocol, host, port, timeout} = {}, previous = {
   this._timeout = typeof timeout !== 'undefined' ? timeout : 5000;
   this._query = {};
   this._secret = secret;
+  this._userAgent = userAgent;
   Object.assign(this, previous);
 }
 
@@ -199,9 +200,10 @@ ChartJSImage.prototype.toURL = function () {
  * @return {Promise<Buffer>} binary image represented as a NodeJS Buffer wrapped inside a promise
  */
 ChartJSImage.prototype.toBuffer = function () {
+  const defaultUserAgent = `javascript-chart.js-image/${packageJson.version}` + (this._query.icac ? ' ' + `(${this._query.icac})` : '');
   const _options = {
     timeout: this._timeout,
-    headers: { 'User-Agent': `javascript-chart.js-image/${packageJson.version}` + (this._query.icac ? ' ' + `(${this._query.icac})` : '') }
+    headers: { 'User-Agent': this._userAgent || defaultUserAgent }
   };
   return fetch(this.toURL(), _options).then(res => {
     return res.buffer().then(buff => {
