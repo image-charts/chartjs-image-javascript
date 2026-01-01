@@ -1,6 +1,6 @@
 {
   "name": "chart.js-image",
-  "version": "6.1.12",
+  "version": "6.1.13",
   "description": "Render Chart.JS as Image (or URL of Image)",
   "main": "lib.js",
   "types": "types.d.ts",
@@ -9,7 +9,7 @@
     "@comment updr": "-r basic : Uses console.log for output, no need for a TTY (e.g when running on CI) => https://www.npmjs.com/package/updtr#--reporter--r",
     "updtr": "updtr -r basic"
   },
-  "engines":{
+  "engines": {
     "node": ">12"
   },
   "jest": {
@@ -27,10 +27,13 @@
     ],
     "reporters": [
       "default",
-      ["jest-junit", {
-        "outputDirectory": "coverage",
-        "outputName": "junit.xml"
-      }]
+      [
+        "jest-junit",
+        {
+          "outputDirectory": "coverage",
+          "outputName": "junit.xml"
+        }
+      ]
     ],
     "coverageThreshold": {
       "global": {
@@ -44,44 +47,44 @@
   "author": "Francois-Guillaume Ribreau <npm@fgribreau.com> (http://fgribreau.com/)",
   "license": "MIT",
   "dependencies": {
-  "node-fetch": "2.6.0",
-  "javascript-stringify": "2.0.1"
-},
+    "node-fetch": "2.6.0",
+    "javascript-stringify": "2.0.1"
+  },
   "devDependencies": {
-  "updtr": "3.1.0",
-  "jest": "26.0.1",
-  "babel-jest": "26.0.1",
-  "@babel/preset-env": "7.9.6",
-  "npm-release": "^1.0.0",
-  "jest-junit": "10.0.0"
-},
+    "updtr": "3.1.0",
+    "jest": "26.0.1",
+    "babel-jest": "26.0.1",
+    "@babel/preset-env": "7.9.6",
+    "npm-release": "^1.0.0",
+    "jest-junit": "10.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/image-charts/.git"
   },
   "keywords": [
-  "chartjs",
-  "charts",
-  "chart-url",
-  "image",
-  "imagecharts",
-  "png",
-  "jpg",
-  "jpeg",
-  "gif",
-  "animated",
-  "api",
-  "pie",
-  "bar",
-  "horizontal-bar",
-  "bubble",
-  "doughnut",
-  "line",
-  "polar"
-],
+    "chartjs",
+    "charts",
+    "chart-url",
+    "image",
+    "imagecharts",
+    "png",
+    "jpg",
+    "jpeg",
+    "gif",
+    "animated",
+    "api",
+    "pie",
+    "bar",
+    "horizontal-bar",
+    "bubble",
+    "doughnut",
+    "line",
+    "polar"
+  ],
   "bugs": {
     "url": "https://github.com/image-charts//issues"
   },
   "homepage": "https://github.com/image-charts/#readme",
-  "contributors": [ ]
+  "contributors": []
 }
