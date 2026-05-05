@@ -51,7 +51,7 @@
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.29.3",
+    "@babel/preset-env": "^7.29.5",
     "babel-jest": "^30.3.0",
     "jest": "^26.0.1",
     "jest-junit": "^17.0.0",
