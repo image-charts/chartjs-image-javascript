@@ -1,6 +1,6 @@
 {
   "name": "chart.js-image",
-  "version": "6.1.93",
+  "version": "6.1.94",
   "description": "Render Chart.JS as Image (or URL of Image)",
   "main": "lib.js",
   "types": "types.d.ts",
