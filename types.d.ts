@@ -32,23 +32,23 @@ export default class ChartJSImage {
     chart(value: string): this;
     
     /**
-     * Width of the chart
+     * Width of the chart, from 1 to 999 pixels
      * [Reference documentation]{@link }
      * @example
          * const chart = ImageCharts().width("400");
      * @default "500"
-     * @param {integer} value - Width of the chart
+     * @param {integer} value - Width of the chart, from 1 to 999 pixels
      * @return {ImageCharts.constructor}
      */
     width(value: string): this;
     
     /**
-     * Height of the chart
+     * Height of the chart, from 1 to 999 pixels
      * [Reference documentation]{@link }
      * @example
          * const chart = ImageCharts().height("300");
      * @default "300"
-     * @param {integer} value - Height of the chart
+     * @param {integer} value - Height of the chart, from 1 to 999 pixels
      * @return {ImageCharts.constructor}
      */
     height(value: string): this;

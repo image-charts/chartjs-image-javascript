@@ -169,8 +169,8 @@ line_chart.toBuffer(); // Promise<Buffer> : Buffer 89 50 4e 47 0d 0a 1a 0a 00 00
     - __[toDataURI()](#todatauri)__
    - __[c(value) - Javascript/JSON definition of the chart. Use a Chart.js configuration object.](#c)__
    - __[chart(value) - Javascript/JSON definition of the chart. Use a Chart.js configuration object.](#chart)__
-   - __[width(value) - Width of the chart](#width)__
-   - __[height(value) - Height of the chart](#height)__
+   - __[width(value) - Width of the chart, from 1 to 999 pixels](#width)__
+   - __[height(value) - Height of the chart, from 1 to 999 pixels](#height)__
    - __[backgroundColor(value) - Background of the chart canvas. Accepts rgb (rgb(255,255,120)), colors (red), and url-encoded hex values (%23ff00ff). Abbreviated as &#34;bkg&#34;](#backgroundcolor)__
    - __[bkg(value) - Background of the chart canvas. Accepts rgb (rgb(255,255,120)), colors (red), and url-encoded hex values (%23ff00ff). Abbreviated as &#34;bkg&#34;](#bkg)__
    - __[encoding(value) - Encoding of your &#34;chart&#34; parameter. Accepted values are url and base64.](#encoding)__
@@ -909,7 +909,7 @@ console.log(chart_url);
 <a name="width"></a>
 #### `width( value )` : [`ChartJSImage`](#constructor)
 
-> Width of the chart
+> Width of the chart, from 1 to 999 pixels
 
 
 
@@ -928,7 +928,7 @@ console.log(chart_url);
 <a name="height"></a>
 #### `height( value )` : [`ChartJSImage`](#constructor)
 
-> Height of the chart
+> Height of the chart, from 1 to 999 pixels
 
 
 

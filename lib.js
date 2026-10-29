@@ -62,12 +62,12 @@ ChartJSImage.prototype.chart = function(value) {
 };
 
 /**
-  * Width of the chart
+  * Width of the chart, from 1 to 999 pixels
   * [Reference documentation]{@link }
   * @example
   * const chart = ChartJSImage().width("400");
   * @default "500"
-  * @param {integer} value - Width of the chart
+  * @param {integer} value - Width of the chart, from 1 to 999 pixels
   * @return {ChartJSImage.constructor}
   */
 ChartJSImage.prototype.width = function(value) {
@@ -75,12 +75,12 @@ ChartJSImage.prototype.width = function(value) {
 };
 
 /**
-  * Height of the chart
+  * Height of the chart, from 1 to 999 pixels
   * [Reference documentation]{@link }
   * @example
   * const chart = ChartJSImage().height("300");
   * @default "300"
-  * @param {integer} value - Height of the chart
+  * @param {integer} value - Height of the chart, from 1 to 999 pixels
   * @return {ChartJSImage.constructor}
   */
 ChartJSImage.prototype.height = function(value) {
