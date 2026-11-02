@@ -11,22 +11,82 @@ export default class ChartJSImage {
     
     /**
      * Javascript/JSON definition of the chart. Use a Chart.js configuration object.
+	* 
+	* A configuration over one of these limits answers 400 with the error code IS_VALIDATION_ERROR:
+	* - data.labels, data.xLabels, data.yLabels, data.datasets[i].data, options.scales.xAxes and options.scales.yAxes are arrays, or null.
+	* - No object of the configuration holds a length key.
+	* - At most 20 axes, 1,000 datasets, 10,000 labels per label list and 10,000 points in total.
+	* - borderDash and zeroLineBorderDash: at most 16 entries, at least 1 pixel per dash or space on average, and a line width at most 2 times the pattern. Dashed datasets run through at most 1,000 points in total.
+	* - minRotation and maxRotation: from -360 to 360 degrees.
+	* - datalabels with display &#39;auto&#39;: at most 3,000 labels.
+	* - A radial scale: at most 1,000 spokes and 100,000 ring corners.
+	* - Ticks: at most 1,000 per linear, logarithmic, time or radial axis, and 11,000 over all axes.
+	* - Border widths, line widths and radii: at most 50 pixels. padding: at most 100 pixels.
+	* - Each text: at most 10,000 characters.
+	* - options.ic.insideLabel: a text of at most 3,000 characters. minFontSize and maxFontSize are brought within 1 to 999 pixels.
+	* 
+	* options.animation is ignored for a PNG chart.
      * [Reference documentation]{@link }
      * @example
          * const chart = ImageCharts().c("{type:'bar',data:{labels:['Q1','Q2','Q3','Q4'],datasets:[{label:'Users',data:[50,60,70,180]},{label:'Revenue',data:[100,200,300,400]}]}}");
      * 
      * @param {string} value - Javascript/JSON definition of the chart. Use a Chart.js configuration object.
+
+A configuration over one of these limits answers 400 with the error code IS_VALIDATION_ERROR:
+- data.labels, data.xLabels, data.yLabels, data.datasets[i].data, options.scales.xAxes and options.scales.yAxes are arrays, or null.
+- No object of the configuration holds a length key.
+- At most 20 axes, 1,000 datasets, 10,000 labels per label list and 10,000 points in total.
+- borderDash and zeroLineBorderDash: at most 16 entries, at least 1 pixel per dash or space on average, and a line width at most 2 times the pattern. Dashed datasets run through at most 1,000 points in total.
+- minRotation and maxRotation: from -360 to 360 degrees.
+- datalabels with display &#39;auto&#39;: at most 3,000 labels.
+- A radial scale: at most 1,000 spokes and 100,000 ring corners.
+- Ticks: at most 1,000 per linear, logarithmic, time or radial axis, and 11,000 over all axes.
+- Border widths, line widths and radii: at most 50 pixels. padding: at most 100 pixels.
+- Each text: at most 10,000 characters.
+- options.ic.insideLabel: a text of at most 3,000 characters. minFontSize and maxFontSize are brought within 1 to 999 pixels.
+
+options.animation is ignored for a PNG chart.
      * @return {ImageCharts.constructor}
      */
     c(value: string): this;
     
     /**
      * Javascript/JSON definition of the chart. Use a Chart.js configuration object.
+	* 
+	* A configuration over one of these limits answers 400 with the error code IS_VALIDATION_ERROR:
+	* - data.labels, data.xLabels, data.yLabels, data.datasets[i].data, options.scales.xAxes and options.scales.yAxes are arrays, or null.
+	* - No object of the configuration holds a length key.
+	* - At most 20 axes, 1,000 datasets, 10,000 labels per label list and 10,000 points in total.
+	* - borderDash and zeroLineBorderDash: at most 16 entries, at least 1 pixel per dash or space on average, and a line width at most 2 times the pattern. Dashed datasets run through at most 1,000 points in total.
+	* - minRotation and maxRotation: from -360 to 360 degrees.
+	* - datalabels with display &#39;auto&#39;: at most 3,000 labels.
+	* - A radial scale: at most 1,000 spokes and 100,000 ring corners.
+	* - Ticks: at most 1,000 per linear, logarithmic, time or radial axis, and 11,000 over all axes.
+	* - Border widths, line widths and radii: at most 50 pixels. padding: at most 100 pixels.
+	* - Each text: at most 10,000 characters.
+	* - options.ic.insideLabel: a text of at most 3,000 characters. minFontSize and maxFontSize are brought within 1 to 999 pixels.
+	* 
+	* options.animation is ignored for a PNG chart.
      * [Reference documentation]{@link }
      * @example
          * const chart = ImageCharts().chart("{type:'bar',data:{labels:['Q1','Q2','Q3','Q4'],datasets:[{label:'Users',data:[50,60,70,180]},{label:'Revenue',data:[100,200,300,400]}]}}");
      * 
      * @param {string} value - Javascript/JSON definition of the chart. Use a Chart.js configuration object.
+
+A configuration over one of these limits answers 400 with the error code IS_VALIDATION_ERROR:
+- data.labels, data.xLabels, data.yLabels, data.datasets[i].data, options.scales.xAxes and options.scales.yAxes are arrays, or null.
+- No object of the configuration holds a length key.
+- At most 20 axes, 1,000 datasets, 10,000 labels per label list and 10,000 points in total.
+- borderDash and zeroLineBorderDash: at most 16 entries, at least 1 pixel per dash or space on average, and a line width at most 2 times the pattern. Dashed datasets run through at most 1,000 points in total.
+- minRotation and maxRotation: from -360 to 360 degrees.
+- datalabels with display &#39;auto&#39;: at most 3,000 labels.
+- A radial scale: at most 1,000 spokes and 100,000 ring corners.
+- Ticks: at most 1,000 per linear, logarithmic, time or radial axis, and 11,000 over all axes.
+- Border widths, line widths and radii: at most 50 pixels. padding: at most 100 pixels.
+- Each text: at most 10,000 characters.
+- options.ic.insideLabel: a text of at most 3,000 characters. minFontSize and maxFontSize are brought within 1 to 999 pixels.
+
+options.animation is ignored for a PNG chart.
      * @return {ImageCharts.constructor}
      */
     chart(value: string): this;
