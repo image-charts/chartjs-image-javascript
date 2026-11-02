@@ -45,7 +45,7 @@ ChartJSImage.prototype._clone = function (param, value) {
 	* - borderDash and zeroLineBorderDash: at most 16 entries, at least 1 pixel per dash or space on average, and a line width at most 2 times the pattern. Dashed datasets run through at most 1,000 points in total.
 	* - minRotation and maxRotation: from -360 to 360 degrees.
 	* - datalabels with display &#39;auto&#39;: at most 3,000 labels.
-	* - A radial scale: at most 1,000 spokes and 100,000 ring corners.
+	* - All the radial scales together: at most 1,000 spokes, 100,000 ring corners and 1,000 ticks. A scale with display false counts none of them, and gridLines.display false counts no corner.
 	* - Ticks: at most 1,000 per linear, logarithmic, time or radial axis, and 11,000 over all axes.
 	* - Border widths, line widths and radii: at most 50 pixels. padding: at most 100 pixels.
 	* - Each text: at most 10,000 characters.
@@ -65,7 +65,7 @@ A configuration over one of these limits answers 400 with the error code IS_VALI
 - borderDash and zeroLineBorderDash: at most 16 entries, at least 1 pixel per dash or space on average, and a line width at most 2 times the pattern. Dashed datasets run through at most 1,000 points in total.
 - minRotation and maxRotation: from -360 to 360 degrees.
 - datalabels with display &#39;auto&#39;: at most 3,000 labels.
-- A radial scale: at most 1,000 spokes and 100,000 ring corners.
+- All the radial scales together: at most 1,000 spokes, 100,000 ring corners and 1,000 ticks. A scale with display false counts none of them, and gridLines.display false counts no corner.
 - Ticks: at most 1,000 per linear, logarithmic, time or radial axis, and 11,000 over all axes.
 - Border widths, line widths and radii: at most 50 pixels. padding: at most 100 pixels.
 - Each text: at most 10,000 characters.
@@ -88,7 +88,7 @@ ChartJSImage.prototype.c = function(value) {
 	* - borderDash and zeroLineBorderDash: at most 16 entries, at least 1 pixel per dash or space on average, and a line width at most 2 times the pattern. Dashed datasets run through at most 1,000 points in total.
 	* - minRotation and maxRotation: from -360 to 360 degrees.
 	* - datalabels with display &#39;auto&#39;: at most 3,000 labels.
-	* - A radial scale: at most 1,000 spokes and 100,000 ring corners.
+	* - All the radial scales together: at most 1,000 spokes, 100,000 ring corners and 1,000 ticks. A scale with display false counts none of them, and gridLines.display false counts no corner.
 	* - Ticks: at most 1,000 per linear, logarithmic, time or radial axis, and 11,000 over all axes.
 	* - Border widths, line widths and radii: at most 50 pixels. padding: at most 100 pixels.
 	* - Each text: at most 10,000 characters.
@@ -108,7 +108,7 @@ A configuration over one of these limits answers 400 with the error code IS_VALI
 - borderDash and zeroLineBorderDash: at most 16 entries, at least 1 pixel per dash or space on average, and a line width at most 2 times the pattern. Dashed datasets run through at most 1,000 points in total.
 - minRotation and maxRotation: from -360 to 360 degrees.
 - datalabels with display &#39;auto&#39;: at most 3,000 labels.
-- A radial scale: at most 1,000 spokes and 100,000 ring corners.
+- All the radial scales together: at most 1,000 spokes, 100,000 ring corners and 1,000 ticks. A scale with display false counts none of them, and gridLines.display false counts no corner.
 - Ticks: at most 1,000 per linear, logarithmic, time or radial axis, and 11,000 over all axes.
 - Border widths, line widths and radii: at most 50 pixels. padding: at most 100 pixels.
 - Each text: at most 10,000 characters.
