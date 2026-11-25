@@ -70,7 +70,7 @@ const chart_url = ChartJSImage({secret: process.env.SECRET_KEY ||  'SECRET_KEY'}
 .bkg('white')
 .width(700)
 .height(390)
-.icretina('1') // enable paid-only features like high-resolution charts
+.icretina('1') // high-resolution chart (always on with Chart.js)
 .toURL(); // get the whole (HMAC signed) URL
 
 console.log(chart_url);

@@ -192,12 +192,12 @@ ChartJSImage.prototype.encoding = function(value) {
 };
 
 /**
-  * image-charts enterprise `account_id`
+  * Image-Charts paid plan `account_id`
   * [Reference documentation]{@link https://documentation.image-charts.com/enterprise/}
   * @example
   * const chart = ChartJSImage().icac("accountId");
   * 
-  * @param {string} value - image-charts enterprise `account_id`
+  * @param {string} value - Image-Charts paid plan `account_id`
   * @return {ChartJSImage.constructor}
   */
 ChartJSImage.prototype.icac = function(value) {
